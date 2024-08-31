@@ -266,9 +266,7 @@ public bool isUsingCaber(int client) {
 // returns 0 if its ok. anything else means its broken.
 public int isCaberBroken(int client) {
     int caberitem = GetPlayerWeaponSlot(client, TFWeaponSlot_Melee);
-    int isBroken = GetEntProp(caberitem, Prop_Send, "m_bBroken");
-    int isDetonated = GetEntProp(caberitem, Prop_Send, "m_iDetonated");
-    return isBroken + isDetonated;
+    return GetEntProp(caberitem, Prop_Send, "m_iDetonated");
 }
 
 public Action Command_Checkcaber(int client, int args) {
